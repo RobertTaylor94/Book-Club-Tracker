@@ -3,23 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E11809EB26403419001633BB /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11809EA26403419001633BB /* BookManager.swift */; };
 		E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */; };
-		E1AD7E93263C35C4006797D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* ContentView.swift */; };
+		E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* HomeView.swift */; };
 		E1AD7E95263C35C5006797D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1AD7E94263C35C5006797D1 /* Assets.xcassets */; };
 		E1AD7E98263C35C5006797D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1AD7E97263C35C5006797D1 /* Preview Assets.xcassets */; };
+		E1AD7EA0263C3A04006797D1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E9F263C3A04006797D1 /* DetailView.swift */; };
+		E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */; };
+		E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA8263C5476006797D1 /* BookCoverView.swift */; };
+		E1AD7EAC263C5569006797D1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EAB263C5569006797D1 /* Realm */; };
+		E1AD7EAE263C5569006797D1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EAD263C5569006797D1 /* RealmSwift */; };
+		E1AD7EB6263C63F5006797D1 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EB5263C63F5006797D1 /* AddBookView.swift */; };
+		E1AD7EFD263D7D5F006797D1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EFC263D7D5F006797D1 /* SwiftyJSON */; };
+		E1AD7F00263D7D7C006797D1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EFF263D7D7C006797D1 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E11809EA26403419001633BB /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
 		E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unicorn Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_BooksApp.swift; sourceTree = "<group>"; };
-		E1AD7E92263C35C4006797D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E1AD7E92263C35C4006797D1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E1AD7E94263C35C5006797D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1AD7E97263C35C5006797D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1AD7E99263C35C5006797D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1AD7E9F263C3A04006797D1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		E1AD7EA8263C5476006797D1 /* BookCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverView.swift; sourceTree = "<group>"; };
+		E1AD7EB5263C63F5006797D1 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +41,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AD7F00263D7D7C006797D1 /* SDWebImageSwiftUI in Frameworks */,
+				E1AD7EFD263D7D5F006797D1 /* SwiftyJSON in Frameworks */,
+				E1AD7EAE263C5569006797D1 /* RealmSwift in Frameworks */,
+				E1AD7EAC263C5569006797D1 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */,
-				E1AD7E92263C35C4006797D1 /* ContentView.swift */,
+				E1AD7EA4263C4524006797D1 /* Model */,
+				E1AD7EA1263C3A0D006797D1 /* View */,
 				E1AD7E94263C35C5006797D1 /* Assets.xcassets */,
 				E1AD7E99263C35C5006797D1 /* Info.plist */,
 				E1AD7E96263C35C5006797D1 /* Preview Content */,
@@ -67,6 +86,26 @@
 				E1AD7E97263C35C5006797D1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E1AD7EA1263C3A0D006797D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1AD7E92263C35C4006797D1 /* HomeView.swift */,
+				E1AD7EA8263C5476006797D1 /* BookCoverView.swift */,
+				E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */,
+				E1AD7EB5263C63F5006797D1 /* AddBookView.swift */,
+				E1AD7E9F263C3A04006797D1 /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1AD7EA4263C4524006797D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E11809EA26403419001633BB /* BookManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +124,12 @@
 			dependencies = (
 			);
 			name = "Unicorn Books";
+			packageProductDependencies = (
+				E1AD7EAB263C5569006797D1 /* Realm */,
+				E1AD7EAD263C5569006797D1 /* RealmSwift */,
+				E1AD7EFC263D7D5F006797D1 /* SwiftyJSON */,
+				E1AD7EFF263D7D7C006797D1 /* SDWebImageSwiftUI */,
+			);
 			productName = "Unicorn Books";
 			productReference = E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +157,11 @@
 				Base,
 			);
 			mainGroup = E1AD7E84263C35C4006797D1;
+			packageReferences = (
+				E1AD7EAA263C5569006797D1 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				E1AD7EFB263D7D5F006797D1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				E1AD7EFE263D7D7C006797D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = E1AD7E8E263C35C4006797D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1AD7E93263C35C4006797D1 /* ContentView.swift in Sources */,
+				E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */,
+				E1AD7EA0263C3A04006797D1 /* DetailView.swift in Sources */,
+				E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */,
+				E11809EB26403419001633BB /* BookManager.swift in Sources */,
 				E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */,
+				E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */,
+				E1AD7EB6263C63F5006797D1 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +383,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1AD7EAA263C5569006797D1 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.4;
+			};
+		};
+		E1AD7EFB263D7D5F006797D1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		E1AD7EFE263D7D7C006797D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1AD7EAB263C5569006797D1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1AD7EAA263C5569006797D1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		E1AD7EAD263C5569006797D1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1AD7EAA263C5569006797D1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		E1AD7EFC263D7D5F006797D1 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1AD7EFB263D7D5F006797D1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E1AD7EFF263D7D7C006797D1 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1AD7EFE263D7D7C006797D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E1AD7E85263C35C4006797D1 /* Project object */;
 }
