@@ -23,21 +23,20 @@ struct HomeView: View {
                 if books != nil {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                   
-                    ForEach(books!) { i in
-                        HStack {
-                        BookCoverView(bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl)
+                    HStack {
+                        ForEach(books!) { i in
+                            BookCoverView(progressValue: i.progressValue, bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl)
                         }
                     }
-                    
-                }.onAppear(){
+                }
+                .onAppear(){
                     updateBooks()
                 }
                 .padding()
+                    
                 } else {
                     Text("Add Your First Book!")
                         .padding()
-                        .background(Color("mainTextColor"))
                         .onAppear(){
                             updateBooks()
                         }

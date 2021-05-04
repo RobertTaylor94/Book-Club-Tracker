@@ -35,22 +35,37 @@ struct AddBookView: View {
                 ScrollView {
                     ForEach(fetcher.books) { i in
                         HStack {
-                            Text(i.title)
-                            Text(i.authors)
-                            Button(action: {
+                            
+                            VStack {
+                                if i.imgurl != "" {
+                                    WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170)
+                                } else {
+                                    Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170)
+                                }
                                 
-                                let newBook = DBBook()
-                                newBook.title = i.title
-                                newBook.id = i.id
-                                newBook.authors = i.authors
-                                newBook.desc = i.desc
-                                newBook.imgurl = i.imgurl
+                                Button(action: {
+                                    
+                                    let newBook = DBBook()
+                                    newBook.title = i.title
+                                    newBook.id = i.id
+                                    newBook.authors = i.authors
+                                    newBook.desc = i.desc
+                                    newBook.imgurl = i.imgurl
+                                    
+                                    self.saveBook(book: newBook)
+                                    
+                                }, label: {
+                                    Text("Add Book")
+                                        .padding().background(Color("mainTextColor"))
+                                })
                                 
-                                self.saveBook(book: newBook)
-                                
-                            }, label: {
-                                Text("Button")
-                            })
+                            }
+                            VStack {
+                                Text(i.title).fontWeight(.bold)
+                                Text(i.authors)
+                                Text(i.desc).font(.caption).lineLimit(4).multilineTextAlignment(.leading)
+                            }
+                        
                         }
                         Spacer()
                     }

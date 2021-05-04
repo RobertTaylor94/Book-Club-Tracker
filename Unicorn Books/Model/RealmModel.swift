@@ -14,4 +14,5 @@ class DBBook: Object, Identifiable {
     @objc dynamic var authors : String = ""
     @objc dynamic var desc : String = ""
     @objc dynamic var imgurl : String = ""
+    @objc dynamic var progressValue: Float = 0.0
 }
