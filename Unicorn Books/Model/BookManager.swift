@@ -53,7 +53,7 @@ public class BookFetcher: ObservableObject {
             }
             
             } else {
-                print("Error")
+                print("No data to decode.")
             }
         }.resume()
         

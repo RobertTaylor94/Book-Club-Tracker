@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E11809EB26403419001633BB /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11809EA26403419001633BB /* BookManager.swift */; };
+		E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22AD6264197CA0055E4A1 /* RealmModel.swift */; };
 		E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */; };
 		E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* HomeView.swift */; };
 		E1AD7E95263C35C5006797D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1AD7E94263C35C5006797D1 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		E11809EA26403419001633BB /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
+		E1A22AD6264197CA0055E4A1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unicorn Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_BooksApp.swift; sourceTree = "<group>"; };
 		E1AD7E92263C35C4006797D1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E11809EA26403419001633BB /* BookManager.swift */,
+				E1A22AD6264197CA0055E4A1 /* RealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */,
 				E11809EB26403419001633BB /* BookManager.swift in Sources */,
 				E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */,
+				E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */,
 				E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */,
 				E1AD7EB6263C63F5006797D1 /* AddBookView.swift in Sources */,
 			);
@@ -335,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roberttaylor.Unicorn-Books";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -357,7 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roberttaylor.Unicorn-Books";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

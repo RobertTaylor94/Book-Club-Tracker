@@ -10,36 +10,60 @@ import RealmSwift
 
 struct HomeView: View {
     
-//    @ObservedObject var networkManager = NetworkManager()
+    @AppStorage("onBoardingShowing") var isOnboardingShowing = true
+    @State private var books: Results<DBBook>?
+    let realm = try! Realm()
     
     var body: some View {
         NavigationView {
             VStack {
-            
-//            Text("Unicorn Book Club")
-//                .font(.largeTitle)
-//                .foregroundColor(Color("mainTextColor"))
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    //Call book objects from Realm database to populate covers
+//                Text("Unicorn Book Club")
+                Spacer()
+                
+                if books != nil {
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                   
+                    ForEach(books!) { i in
+                        HStack {
+                        BookCoverView(bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl)
+                        }
+                    }
                     
-                    BookCoverView()
-                    BookCoverView()
-                    BookCoverView()
+                }.onAppear(){
+                    updateBooks()
                 }
-            }
-            .padding()
-            NavigationLink("Add Book", destination: AddBookView())
-                .foregroundColor(.white)
-                .font(.body)
                 .padding()
-                .background(Color("mainTextColor"))
-                .cornerRadius(20)
+                } else {
+                    Text("Add Your First Book!")
+                        .padding()
+                        .background(Color("mainTextColor"))
+                        .onAppear(){
+                            updateBooks()
+                        }
+                }
+                
+                
+                
+                NavigationLink("Add Book", destination: AddBookView())
+                    .foregroundColor(.white)
+                    .font(.body)
+                    .padding()
+                    .background(Color("mainTextColor"))
+                    .cornerRadius(20)
+                Spacer()
+            }
+            .navigationTitle("Book Club")
+//            .navigationBarHidden(true)
         }
-        .navigationTitle("Unicorn Book Club")
-        }
-       
+        
+        
     }
+    
+    func updateBooks() {
+        books = realm.objects(DBBook.self)
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -47,3 +71,10 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
+
+//List(books!) { i in
+//    Text(i.title)
+//}.onAppear(){
+//    self.updateBooks()
+//}

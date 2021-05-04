@@ -8,14 +8,16 @@
 import SwiftUI
 import SwiftyJSON
 import SDWebImageSwiftUI
+import RealmSwift
 
 struct AddBookView: View {
     
     @State public var searchText: String = ""
     @ObservedObject var fetcher = BookFetcher(search: "")
+    let realm = try! Realm()
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
         Form {
             Section(header: Text("")) {
                 HStack{
@@ -29,33 +31,89 @@ struct AddBookView: View {
             }
 
             Section(header: Text("")) {
-                List(fetcher.books) { i in
-                    
-                    HStack {
-                        if i.imgurl != "" {
-                            WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170)
-                        } else {
-                            Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170)
-                        }
-                        
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(i.title).fontWeight(.bold)
+                
+                ScrollView {
+                    ForEach(fetcher.books) { i in
+                        HStack {
+                            Text(i.title)
                             Text(i.authors)
-                            Text(i.desc).font(.caption).lineLimit(4).multilineTextAlignment(.leading)
+                            Button(action: {
+                                
+                                let newBook = DBBook()
+                                newBook.title = i.title
+                                newBook.id = i.id
+                                newBook.authors = i.authors
+                                newBook.desc = i.desc
+                                newBook.imgurl = i.imgurl
+                                
+                                self.saveBook(book: newBook)
+                                
+                            }, label: {
+                                Text("Button")
+                            })
                         }
+                        Spacer()
                     }
-                    
-                    
-                    
                 }
+                
+                
+//                List(fetcher.books) { i in
+//
+//                    HStack {
+//                        VStack {
+//                        if i.imgurl != "" {
+//                            WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170)
+//                        } else {
+//                            Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170)
+//                        }
+//                            Button(action: {
+//
+//                                let newBook = DBBook()
+//                                newBook.title = i.title
+//                                newBook.id = i.id
+//                                newBook.authors = i.authors
+//                                newBook.desc = i.desc
+//                                newBook.imgurl = i.imgurl
+//
+//                                self.saveBook(book: newBook)
+//
+//                            }, label: {
+//                                Text("Add Book")
+//                                    .padding()
+//                                    .background(Color.red)
+//                            })
+//                        }
+//
+//                        VStack(alignment: .leading, spacing: 10) {
+//                            Text(i.title).fontWeight(.bold)
+//                            Text(i.authors)
+//                            Text(i.desc).font(.caption).lineLimit(4).multilineTextAlignment(.leading)
+//                        }
+//                    }
+//
+//
+//
+//                }
             }
 
 
 
         }
-        
-        }.navigationTitle("Add New Book")
+        .navigationTitle("Add New Book")
+
     }
+    
+    func saveBook(book: DBBook) {
+        do {
+            try realm.write {
+                realm.add(book)
+            }
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+    
+    
 }
 
 struct AddBookView_Previews: PreviewProvider {
@@ -63,11 +121,3 @@ struct AddBookView_Previews: PreviewProvider {
         AddBookView()
     }
 }
-
-//struct BookItemView(title: String) {
-//    var body: some View {
-//        HStack {
-//            Image("book")
-//        }
-//    }
-//}
