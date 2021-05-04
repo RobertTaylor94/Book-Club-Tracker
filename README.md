@@ -1,5 +1,5 @@
 # Book-Club-Tracker
-Book Club allows you to search for and add books to your local library and track your reading progress.
+Book Club allows you to search for and add books to a local library and track your reading progress.
 
 ## Home View
 The Home View displays the current books saved to a users library and allows them to interact with the ProgressView using a stepper to track their reading progress.
