@@ -70,10 +70,3 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
     }
 }
-
-
-//List(books!) { i in
-//    Text(i.title)
-//}.onAppear(){
-//    self.updateBooks()
-//}

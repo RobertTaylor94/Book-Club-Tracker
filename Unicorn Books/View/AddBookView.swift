@@ -32,15 +32,15 @@ struct AddBookView: View {
 
             Section(header: Text("")) {
                 
-                ScrollView {
+//                ScrollView {
                     ForEach(fetcher.books) { i in
                         HStack {
                             
                             VStack {
                                 if i.imgurl != "" {
-                                    WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170)
+                                    WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170).aspectRatio(contentMode: .fit)
                                 } else {
-                                    Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170)
+                                    Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170).aspectRatio(contentMode: .fit)
                                 }
                                 
                                 Button(action: {
@@ -56,7 +56,7 @@ struct AddBookView: View {
                                     
                                 }, label: {
                                     Text("Add Book")
-                                        .padding().background(Color("mainTextColor"))
+                                        .padding().background(Color("mainTextColor")).cornerRadius(20).foregroundColor(.white)
                                 })
                                 
                             }
@@ -69,45 +69,6 @@ struct AddBookView: View {
                         }
                         Spacer()
                     }
-                }
-                
-                
-//                List(fetcher.books) { i in
-//
-//                    HStack {
-//                        VStack {
-//                        if i.imgurl != "" {
-//                            WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170)
-//                        } else {
-//                            Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170)
-//                        }
-//                            Button(action: {
-//
-//                                let newBook = DBBook()
-//                                newBook.title = i.title
-//                                newBook.id = i.id
-//                                newBook.authors = i.authors
-//                                newBook.desc = i.desc
-//                                newBook.imgurl = i.imgurl
-//
-//                                self.saveBook(book: newBook)
-//
-//                            }, label: {
-//                                Text("Add Book")
-//                                    .padding()
-//                                    .background(Color.red)
-//                            })
-//                        }
-//
-//                        VStack(alignment: .leading, spacing: 10) {
-//                            Text(i.title).fontWeight(.bold)
-//                            Text(i.authors)
-//                            Text(i.desc).font(.caption).lineLimit(4).multilineTextAlignment(.leading)
-//                        }
-//                    }
-//
-//
-//
 //                }
             }
 
