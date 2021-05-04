@@ -56,6 +56,7 @@
 		E1AD7E84263C35C4006797D1 = {
 			isa = PBXGroup;
 			children = (
+				E1B25B7C2641BC13006BF215 /* Images */,
 				E1AD7E8F263C35C4006797D1 /* Unicorn Books */,
 				E1AD7E8E263C35C4006797D1 /* Products */,
 			);
@@ -109,6 +110,13 @@
 				E1A22AD6264197CA0055E4A1 /* RealmModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E1B25B7C2641BC13006BF215 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
