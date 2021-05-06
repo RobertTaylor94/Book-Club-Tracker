@@ -11,6 +11,11 @@ The Add Book View allows users to search for books using the Google Books API an
 
 <img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/0095b20b94583e44c9ddfd9003af24b07319a71b/Images/screen1.png" width="300" height="600">
 
+## Details Sheet
+Shows an expanded detailed view of each book in a users library
+
+<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/925749e573767b0fb4759aad23480f52cee59ddd/Images/screen2.png" width="300" height="600">
+
 ## Dependencies
 Uses RealmSwift to manage a database of Books allowing the user to store books to a local library
 Uses SwiftyJSON to parse the JSON recieved from the Google Books API
