@@ -21,7 +21,7 @@ public class BookFetcher: ObservableObject {
         
         books.removeAll(keepingCapacity: false)
         
-        let url = "https://www.googleapis.com/books/v1/volumes?q=\(string.replacingOccurrences(of: " ", with: "+"))&maxResults=5"
+        let url = "https://www.googleapis.com/books/v1/volumes?q=\(string.replacingOccurrences(of: " ", with: "+"))&maxResults=10"
         
         let session = URLSession(configuration: .default)
         
@@ -38,7 +38,9 @@ public class BookFetcher: ObservableObject {
             for i in items {
                 let id = i["id"].stringValue
                 let title = i["volumeInfo"]["title"].stringValue
-                let authors = i["volumeInfo"]["authors"].array!
+                guard let authors = i["volumeInfo"]["authors"].array else {
+                    return
+                }
                 var author = ""
                 for j in authors {
                     author += "\(j.stringValue)"
@@ -57,28 +59,6 @@ public class BookFetcher: ObservableObject {
             }
         }.resume()
         
-     
-//
-//        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-//            if error != nil {
-//                print(error!)
-//            } else {
-//                if let urlContent = data {
-//                    do {
-//                        let jsonResult = try JSONDecoder().decode(Book.self, from: urlContent)
-//
-//                        DispatchQueue.main.async {
-//                            self.books.append(jsonResult)
-//                        }
-//
-//                    } catch {
-//                        print("failed\(error)")
-//                    }
-//                }
-//            }
-//        }
-//        task.resume()
-        
         
     }
    
@@ -91,33 +71,3 @@ struct Book: Identifiable {
     var desc: String
     var imgurl: String
 }
-
-
-
-//struct Book: Codable, Identifiable {
-//    let id = UUID()
-//    let items: [Items]
-//}
-//
-//struct Items: Codable, Identifiable {
-//    let id = UUID()
-//    let volumeInfo: VolumeInfo
-//}
-//
-//struct VolumeInfo: Codable, Identifiable {
-//    let id = UUID()
-//    let title: String
-//    let authors: [String]
-//    let description: String?
-//    let imageLinks: ImageLinks
-//}
-//
-//struct Authors: Codable, Identifiable {
-//    let id = UUID()
-//    let author: String
-//}
-//
-//struct ImageLinks: Codable, Identifiable {
-//    let id = UUID()
-//    let smallThumbnail: String?
-//}
