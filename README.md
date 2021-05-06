@@ -9,7 +9,7 @@ The Home View displays the current books saved to a users library and allows the
 ## Add Book View
 The Add Book View allows users to search for books using the Google Books API and lets them add books to their library 
 
-<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/3bf388f1aff6a4d214308ed378db3f630819bca8/Images/screen1.png" width="300" height="600">
+<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/0095b20b94583e44c9ddfd9003af24b07319a71b/Images/screen1.png" width="300" height="600">
 
 ## Dependencies
 Uses RealmSwift to manage a database of Books allowing the user to store books to a local library
