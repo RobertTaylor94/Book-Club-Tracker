@@ -27,7 +27,7 @@ struct HomeView: View {
                             ForEach(books!.reversed()) { i in
                                 ZStack {
                                     BookCoverView(progressValue: i.progressValue, bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl, book: i)
-                                    VStack(alignment: .trailing) {
+                                    VStack(alignment: .trailing, spacing: 20) {
                                         HStack {
                                             Spacer()
                                             Button(action: {
@@ -35,7 +35,7 @@ struct HomeView: View {
                                             updateBooks()
                                         }, label: {
                                             Text("Delete")
-                                                .font(.caption).foregroundColor(.white).padding().background(Color.red).cornerRadius(20).shadow(color: .black, radius: 10, x: 0.0, y: 0.0)
+                                                .font(.caption).foregroundColor(.white).padding().background(Color.red).cornerRadius(20).shadow(color: .black, radius: 7, x: 0.0, y: 0.0)
                                     })
                                         }.padding()
                                         Spacer()

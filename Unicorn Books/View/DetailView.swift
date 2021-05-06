@@ -27,11 +27,12 @@ struct DetailView: View {
         VStack(spacing: 20) {
             Text(bookTitle).font(.title2)
             Text(bookAuthor).font(.caption)
-            WebImage(url: URL(string: bookImgUrl)).resizable().frame(width: 200, height: 300).cornerRadius(10)
+            WebImage(url: URL(string: bookImgUrl)).resizable().frame(minWidth: 100, idealWidth: 200, maxWidth: 200, minHeight: 200, idealHeight: 300, maxHeight: 300).aspectRatio(contentMode: .fit).cornerRadius(10)
             ScrollView {
-                Text(bookDescription).font(.caption)
+                Text(bookDescription).font(.body)
             }.padding()
-            ProgressBar(progress: $progressValue)
+            ProgressBar(progress: $progressValue).frame(width: 100, height: 100)
+            Spacer()
         }
         .padding()
         .background(LinearGradient(gradient: Gradient(colors: [Color("DetailViewColorOne"), Color("DetailViewColorTwo")]), startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea())
