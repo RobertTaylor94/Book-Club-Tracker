@@ -4,13 +4,19 @@ Book Club allows you to search for and add books to a local library and track yo
 ## Home View
 The Home View displays the current books saved to a users library and allows them to interact with the ProgressView using a stepper to track their reading progress.
 
-<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/3bf388f1aff6a4d214308ed378db3f630819bca8/Images/screen0.png" width="300" height="600">
+<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/b9ea638a1ac9a4c1edef1b184466e82d97372b81/Images/screen0.png" width="300" height="600">
 
 ## Add Book View
 The Add Book View allows users to search for books using the Google Books API and lets them add books to their library 
 
-<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/3bf388f1aff6a4d214308ed378db3f630819bca8/Images/screen1.png" width="300" height="600">
+<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/0095b20b94583e44c9ddfd9003af24b07319a71b/Images/screen1.png" width="300" height="600">
+
+## Details Sheet
+Shows an expanded detailed view of each book in a users library
+
+<img src="https://github.com/RobertTaylor94/Book-Club-Tracker/blob/4bed180ff60fc007dd7233397f48202519040ce4/Images/screen2.png" width="300" height="600">
 
 ## Dependencies
-Uses RealmSwift to manage a database of Books allowing the user to store books to a local library
-Uses SwiftyJSON to parse the JSON recieved from the Google Books API
+* Uses RealmSwift to manage a database of Books allowing the user to store books to a local library
+* Uses SwiftyJSON to parse the JSON recieved from the Google Books API
+* SDWebImageSwiftUI used to display thumbnails of the book covers
