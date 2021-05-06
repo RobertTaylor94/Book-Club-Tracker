@@ -11,7 +11,7 @@ import SwiftUI
 struct Unicorn_BooksApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            MainView()
         }
     }
 }
