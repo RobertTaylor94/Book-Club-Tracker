@@ -14,37 +14,40 @@ struct AddBookView: View {
     
     @State public var searchText: String = ""
     @ObservedObject var fetcher = BookFetcher(search: "")
+    @State private var showCancelButton: Bool = false
     let realm = try! Realm()
     
     var body: some View {
-//        NavigationView {
-        Form {
-            Section(header: Text("")) {
-                HStack{
-                TextField("Search", text: $searchText)
-                Button(action: {
-                        self.fetcher.getJsonData(string: self.searchText)
-                }, label: {
-                    Image(systemName: "magnifyingglass.circle").resizable().frame(width: 30, height: 30)
-                })
+            VStack {
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    
+                    TextField("search", text: $searchText, onEditingChanged: { isEditing in
+                        self.showCancelButton = true
+                    }, onCommit: {
+                        self.fetcher.getJsonData(string: searchText)
+                    }).foregroundColor(.primary).keyboardType(.webSearch)
+                    
+                    Button(action: {
+                        self.searchText = ""
+                    }) {
+                        Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
+                    }
                 }
-            }
-
-            Section(header: Text("")) {
+                .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
+                .foregroundColor(.secondary)
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(10.0)
                 
-//                ScrollView {
-                    ForEach(fetcher.books) { i in
-                        HStack {
-                            
-                            VStack {
-                                if i.imgurl != "" {
-                                    WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170).aspectRatio(contentMode: .fit)
-                                } else {
-                                    Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170).aspectRatio(contentMode: .fit)
-                                }
-                                
-                                Button(action: {
-                                    
+                List(fetcher.books) { i in
+                    HStack {
+                        VStack {
+                            if i.imgurl != "" {
+                                WebImage(url: URL(string: i.imgurl)).resizable().frame(width: 120, height: 170).aspectRatio(contentMode: .fit)
+                            } else {
+                                Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170).aspectRatio(contentMode: .fit)
+                            }
+                            Button(action: {
                                     let newBook = DBBook()
                                     newBook.title = i.title
                                     newBook.id = i.id
@@ -56,27 +59,22 @@ struct AddBookView: View {
                                     
                                 }, label: {
                                     Text("Add Book")
-                                        .padding().background(Color("mainTextColor")).cornerRadius(20).foregroundColor(.white)
+                                        .padding().background(Color("Button")).cornerRadius(20).foregroundColor(.white)
                                 })
-                                
-                            }
-                            VStack {
-                                Text(i.title).fontWeight(.bold)
-                                Text(i.authors)
-                                Text(i.desc).font(.caption).lineLimit(4).multilineTextAlignment(.leading)
-                            }
-                        
                         }
-                        Spacer()
+                        VStack {
+                            Text(i.title).fontWeight(.bold)
+                            Text(i.authors)
+                            Text(i.desc).font(.caption).lineLimit(4).multilineTextAlignment(.leading)
+                        }
                     }
-//                }
+                    Spacer()
+                }
+                .resignKeyboardOnDragGesture()
+                .padding()
             }
-
-
-
-        }
-        .navigationTitle("Add New Book")
-
+            .padding()
+            .navigationTitle("Add New Book")
     }
     
     func saveBook(book: DBBook) {
@@ -88,12 +86,40 @@ struct AddBookView: View {
             print("Error saving context \(error)")
         }
     }
-    
-    
 }
+
+
+
+//MARK: Preview
 
 struct AddBookView_Previews: PreviewProvider {
     static var previews: some View {
         AddBookView()
+    }
+}
+
+//MARK: Resign Keyboard
+
+extension UIApplication {
+    func endEditing(_ force: Bool) {
+        self.windows
+            .filter{$0.isKeyWindow}
+            .first?
+            .endEditing(force)
+    }
+}
+
+struct ResignKeyboardOnDragGesture: ViewModifier {
+    var gesture = DragGesture().onChanged{_ in
+        UIApplication.shared.endEditing(true)
+    }
+    func body(content: Content) -> some View {
+        content.gesture(gesture)
+    }
+}
+
+extension View {
+    func resignKeyboardOnDragGesture() -> some View {
+        return modifier(ResignKeyboardOnDragGesture())
     }
 }
