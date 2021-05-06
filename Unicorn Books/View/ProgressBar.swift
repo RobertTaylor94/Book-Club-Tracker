@@ -25,7 +25,7 @@ struct ProgressBar: View {
                 .animation(.linear)
             Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
                 .fontWeight(.bold)
-                .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
+                .font(.title2)
         }
         
         
