@@ -25,16 +25,16 @@ struct BookCoverView: View {
     
     var body: some View {
     
-            VStack(spacing: 20) {
+            VStack(spacing: 15) {
                 
                 Button(action: {
                     isShowingSheet.toggle()
                 }, label: {
                     VStack(alignment: .leading, spacing: 16.0) {
                         if bookImgUrl != "" {
-                            WebImage(url: URL(string: bookImgUrl)).resizable().frame(width: 120, height: 170)
+                            WebImage(url: URL(string: bookImgUrl)).resizable().frame(minWidth: 90, idealWidth: 120, maxWidth: .infinity, minHeight: 140, idealHeight: 170, maxHeight: 170).aspectRatio(contentMode: .fit).cornerRadius(10)
                         } else {
-                            Image(systemName: "books.vertical").resizable().frame(width: 120, height: 170)
+                            Image(systemName: "books.vertical").resizable().frame(minWidth: 90, idealWidth: 120, maxWidth: .infinity, minHeight: 140, idealHeight: 170, maxHeight: 170).cornerRadius(10)
                         }
                         Text("\(bookTitle)")
                             .font(.title)
@@ -45,7 +45,7 @@ struct BookCoverView: View {
                             .fontWeight(.light)
                             .lineLimit(4)
                     }
-                    .frame(width: 200, height: 350)
+                    .frame(minWidth: 100, idealWidth: 200, maxWidth: 200, minHeight: 175, idealHeight: 350, maxHeight: 350)
                     .foregroundColor(.white)
                     .padding()
                     .background(LinearGradient(gradient: Gradient(colors: [Color("BookTileColorOne"), Color("BookTileColorTwo")]), startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -54,12 +54,8 @@ struct BookCoverView: View {
                 .sheet(isPresented: $isShowingSheet) {
                     DetailView(progressValue: progressValue, bookID: bookID, bookTitle: bookTitle, bookAuthor: bookAuthor, bookDescription: bookDescription, bookImgUrl: bookImgUrl)
                 }
-                
-        
-               
-                
                 ProgressBar(progress: self.$progressValue)
-                    .frame(width: 100, height: 100)
+                    .frame(minWidth: 50, idealWidth: 80, maxWidth: 100, minHeight: 50, idealHeight: 80, maxHeight: 100)
                     .padding()
 
                 Stepper("", value: $progressValue, in: 0...1, step: 0.1)
