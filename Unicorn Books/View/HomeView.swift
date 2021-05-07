@@ -29,7 +29,7 @@ struct HomeView: View {
                                     BookCoverView(progressValue: i.progressValue, bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl, book: i)
                                     VStack(alignment: .trailing, spacing: 20) {
                                         HStack {
-                                        
+                                            Spacer()
                                             Button(action: {
                                             deleteBook(filter: i.title)
                                             updateBooks()
