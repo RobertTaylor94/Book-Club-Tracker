@@ -22,7 +22,6 @@
 		E1AD7EFD263D7D5F006797D1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EFC263D7D5F006797D1 /* SwiftyJSON */; };
 		E1AD7F00263D7D7C006797D1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EFF263D7D7C006797D1 /* SDWebImageSwiftUI */; };
 		E1F9D2FC26441F4B00401002 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9D2FB26441F4B00401002 /* MainView.swift */; };
-		E1F9D2FE2645AAC900401002 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9D2FD2645AAC900401002 /* GroupsView.swift */; };
 		E1F9D3012645ADB800401002 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E1F9D3002645ADB800401002 /* FirebaseAuth */; };
 		E1F9D3032645ADB800401002 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E1F9D3022645ADB800401002 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		E1AD7EA8263C5476006797D1 /* BookCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverView.swift; sourceTree = "<group>"; };
 		E1AD7EB5263C63F5006797D1 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		E1F9D2FB26441F4B00401002 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		E1F9D2FD2645AAC900401002 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 				E1F9D2FB26441F4B00401002 /* MainView.swift */,
 				E1AD7E92263C35C4006797D1 /* HomeView.swift */,
 				E1AD7EB5263C63F5006797D1 /* AddBookView.swift */,
-				E1F9D2FD2645AAC900401002 /* GroupsView.swift */,
 				E1AD7EA8263C5476006797D1 /* BookCoverView.swift */,
 				E1AD7E9F263C3A04006797D1 /* DetailView.swift */,
 				E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */,
@@ -216,7 +213,6 @@
 				E1AD7EA0263C3A04006797D1 /* DetailView.swift in Sources */,
 				E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */,
 				E11809EB26403419001633BB /* BookManager.swift in Sources */,
-				E1F9D2FE2645AAC900401002 /* GroupsView.swift in Sources */,
 				E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */,
 				E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */,
 				E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */,

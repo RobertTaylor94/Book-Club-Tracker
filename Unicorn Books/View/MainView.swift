@@ -22,11 +22,6 @@ struct MainView: View {
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Add Book")
                 }
-            GroupsView()
-                .tabItem {
-                    Image(systemName: "person.3.fill")
-                    Text("Groups")
-                }
         }
         
     }
