@@ -21,7 +21,7 @@ public class BookFetcher: ObservableObject {
         
         books.removeAll(keepingCapacity: false)
         
-        let url = "https://www.googleapis.com/books/v1/volumes?q=\(string.replacingOccurrences(of: " ", with: "+"))&maxResults=10"
+        let url = "https://www.googleapis.com/books/v1/volumes?q=\(string.replacingOccurrences(of: " ", with: "+"))&maxResults=10&key=AIzaSyBZWUcfMbd4Y-FsO6Mrm5vyI9LIUoGel6s"
         
         let session = URLSession(configuration: .default)
         

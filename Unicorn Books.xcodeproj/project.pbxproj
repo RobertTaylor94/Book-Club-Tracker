@@ -22,6 +22,9 @@
 		E1AD7EFD263D7D5F006797D1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EFC263D7D5F006797D1 /* SwiftyJSON */; };
 		E1AD7F00263D7D7C006797D1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E1AD7EFF263D7D7C006797D1 /* SDWebImageSwiftUI */; };
 		E1F9D2FC26441F4B00401002 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9D2FB26441F4B00401002 /* MainView.swift */; };
+		E1F9D2FE2645AAC900401002 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9D2FD2645AAC900401002 /* GroupsView.swift */; };
+		E1F9D3012645ADB800401002 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E1F9D3002645ADB800401002 /* FirebaseAuth */; };
+		E1F9D3032645ADB800401002 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E1F9D3022645ADB800401002 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,7 @@
 		E1AD7EA8263C5476006797D1 /* BookCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverView.swift; sourceTree = "<group>"; };
 		E1AD7EB5263C63F5006797D1 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		E1F9D2FB26441F4B00401002 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E1F9D2FD2645AAC900401002 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +50,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1AD7F00263D7D7C006797D1 /* SDWebImageSwiftUI in Frameworks */,
+				E1F9D3012645ADB800401002 /* FirebaseAuth in Frameworks */,
 				E1AD7EFD263D7D5F006797D1 /* SwiftyJSON in Frameworks */,
 				E1AD7EAE263C5569006797D1 /* RealmSwift in Frameworks */,
 				E1AD7EAC263C5569006797D1 /* Realm in Frameworks */,
+				E1F9D3032645ADB800401002 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +104,9 @@
 			children = (
 				E1F9D2FB26441F4B00401002 /* MainView.swift */,
 				E1AD7E92263C35C4006797D1 /* HomeView.swift */,
-				E1AD7EA8263C5476006797D1 /* BookCoverView.swift */,
 				E1AD7EB5263C63F5006797D1 /* AddBookView.swift */,
+				E1F9D2FD2645AAC900401002 /* GroupsView.swift */,
+				E1AD7EA8263C5476006797D1 /* BookCoverView.swift */,
 				E1AD7E9F263C3A04006797D1 /* DetailView.swift */,
 				E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */,
 			);
@@ -143,6 +150,8 @@
 				E1AD7EAD263C5569006797D1 /* RealmSwift */,
 				E1AD7EFC263D7D5F006797D1 /* SwiftyJSON */,
 				E1AD7EFF263D7D7C006797D1 /* SDWebImageSwiftUI */,
+				E1F9D3002645ADB800401002 /* FirebaseAuth */,
+				E1F9D3022645ADB800401002 /* FirebaseFirestore */,
 			);
 			productName = "Unicorn Books";
 			productReference = E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */;
@@ -175,6 +184,7 @@
 				E1AD7EAA263C5569006797D1 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				E1AD7EFB263D7D5F006797D1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				E1AD7EFE263D7D7C006797D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				E1F9D2FF2645ADB800401002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E1AD7E8E263C35C4006797D1 /* Products */;
 			projectDirPath = "";
@@ -206,6 +216,7 @@
 				E1AD7EA0263C3A04006797D1 /* DetailView.swift in Sources */,
 				E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */,
 				E11809EB26403419001633BB /* BookManager.swift in Sources */,
+				E1F9D2FE2645AAC900401002 /* GroupsView.swift in Sources */,
 				E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */,
 				E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */,
 				E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */,
@@ -425,6 +436,14 @@
 				minimumVersion = 2.0.2;
 			};
 		};
+		E1F9D2FF2645ADB800401002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -447,6 +466,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E1AD7EFE263D7D7C006797D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		E1F9D3002645ADB800401002 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1F9D2FF2645ADB800401002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E1F9D3022645ADB800401002 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1F9D2FF2645ADB800401002 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

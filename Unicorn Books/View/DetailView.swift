@@ -30,7 +30,10 @@ struct DetailView: View {
             WebImage(url: URL(string: bookImgUrl)).resizable().frame(minWidth: 100, idealWidth: 200, maxWidth: 200, minHeight: 200, idealHeight: 300, maxHeight: 300).aspectRatio(contentMode: .fit).cornerRadius(10)
             ScrollView {
                 Text(bookDescription).font(.body)
-            }.padding()
+            }
+            .padding()
+            .background(Color("TextBackground"))
+            .cornerRadius(10)
             ProgressBar(progress: $progressValue).frame(width: 100, height: 100)
             Spacer()
         }
