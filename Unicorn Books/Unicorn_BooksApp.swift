@@ -6,14 +6,10 @@
 //
 
 import SwiftUI
-import Firebase
+
 
 @main
 struct Unicorn_BooksApp: App {
-    
-//    init() {
-//        FirebaseApp.configure()
-//    }
     
     var body: some Scene {
         WindowGroup {
