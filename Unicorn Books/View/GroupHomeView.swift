@@ -10,6 +10,9 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct GroupHomeView: View {
+    
+    @State private var isShowingSheet = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -36,9 +39,12 @@ struct GroupHomeView: View {
             .navigationTitle("My Groups")
             .toolbar {
                 Button(action: {
-                    
+                    isShowingSheet.toggle()
                 }, label: {
                     Text("Sign In")
+                })
+                .sheet(isPresented: $isShowingSheet, content: {
+                    LogInView()
                 })
             }
         }
