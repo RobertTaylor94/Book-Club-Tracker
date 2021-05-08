@@ -12,7 +12,7 @@ import Firebase
 struct Unicorn_BooksApp: App {
     
     init() {
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
     }
     
     var body: some Scene {
