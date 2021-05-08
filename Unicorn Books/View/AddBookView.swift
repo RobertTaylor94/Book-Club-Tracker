@@ -5,16 +5,19 @@
 //  Created by Robert Taylor on 30/04/2021.
 //
 
+import AlertToast
 import SwiftUI
 import SwiftyJSON
 import SDWebImageSwiftUI
 import RealmSwift
+
 
 struct AddBookView: View {
     
     @State public var searchText: String = ""
     @ObservedObject var fetcher = BookFetcher(search: "")
     @State private var showCancelButton: Bool = false
+    @State private var showAlert = false
     let realm = try! Realm()
     
     var body: some View {
@@ -56,12 +59,17 @@ struct AddBookView: View {
                                     newBook.imgurl = i.imgurl
                                     
                                     self.saveBook(book: newBook)
+                                showAlert.toggle()
                                     
                                 }, label: {
                                     Text("Add Book")
                                         .padding().background(Color("Button")).cornerRadius(20).foregroundColor(.white)
                                 })
+
                         }
+                    
+                        
+                        
                         VStack {
                             Text(i.title).fontWeight(.bold)
                             Text(i.authors)
@@ -72,6 +80,9 @@ struct AddBookView: View {
                 }
                 .resignKeyboardOnDragGesture()
                 .padding()
+                .toast(isPresenting: $showAlert) {
+                    AlertToast(type: .complete(Color.green), title: "Added to Library")
+                }
             }
             .padding()
             .navigationTitle("Add New Book")
