@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import WidgetKit
 
 struct HomeView: View {
     
@@ -46,6 +47,7 @@ struct HomeView: View {
                     }
                     .onAppear(){
                         updateBooks()
+                        updateWidgetData()
                     }
                     .padding()
                 } else {
@@ -76,6 +78,12 @@ struct HomeView: View {
         } catch {
             print("Error deleting from context, \(error)")
         }
+    }
+    func updateWidgetData() {
+        let book = books?.last
+        UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.set(book?.title, forKey: "title")
+        UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.set(book?.progressValue, forKey: "progress")
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
 }

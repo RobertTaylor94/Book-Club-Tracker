@@ -96,6 +96,9 @@ struct AddBookView: View {
         } catch {
             print("Error saving context \(error)")
         }
+        
+        UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.set(book.title, forKey: "title")
+        
     }
 }
 
