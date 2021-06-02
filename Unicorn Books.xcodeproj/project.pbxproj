@@ -13,9 +13,12 @@
 		E13BE01B266814A800D04408 /* Unicorn_Books_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE01A266814A800D04408 /* Unicorn_Books_Widget.swift */; };
 		E13BE01D266814AA00D04408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13BE01C266814AA00D04408 /* Assets.xcassets */; };
 		E13BE021266814AA00D04408 /* Unicorn Books WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E13BE013266814A800D04408 /* Unicorn Books WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E13BE027266817D900D04408 /* BooksWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE026266817D900D04408 /* BooksWidgetView.swift */; };
+		E13BE027266817D900D04408 /* BooksWidgetViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE026266817D900D04408 /* BooksWidgetViewSmall.swift */; };
 		E13BE029266818E100D04408 /* WidgetBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE028266818E100D04408 /* WidgetBookModel.swift */; };
 		E13BE02C26682F5D00D04408 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */; };
+		E13BE02E26683F3B00D04408 /* BooksWidgetViewMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE02D26683F3B00D04408 /* BooksWidgetViewMedium.swift */; };
+		E13BE03026683F4800D04408 /* BooksWidgetViewLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE02F26683F4800D04408 /* BooksWidgetViewLarge.swift */; };
+		E13BE0322668414400D04408 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E13BE0312668414400D04408 /* SDWebImageSwiftUI */; };
 		E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22AD6264197CA0055E4A1 /* RealmModel.swift */; };
 		E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */; };
 		E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* HomeView.swift */; };
@@ -65,10 +68,12 @@
 		E13BE01A266814A800D04408 /* Unicorn_Books_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_Books_Widget.swift; sourceTree = "<group>"; };
 		E13BE01C266814AA00D04408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13BE01E266814AA00D04408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E13BE026266817D900D04408 /* BooksWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksWidgetView.swift; sourceTree = "<group>"; };
+		E13BE026266817D900D04408 /* BooksWidgetViewSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksWidgetViewSmall.swift; sourceTree = "<group>"; };
 		E13BE028266818E100D04408 /* WidgetBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBookModel.swift; sourceTree = "<group>"; };
 		E13BE02A26681A0500D04408 /* Unicorn Books.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Unicorn Books.entitlements"; sourceTree = "<group>"; };
 		E13BE02B26681A1A00D04408 /* Unicorn Books WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Unicorn Books WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		E13BE02D26683F3B00D04408 /* BooksWidgetViewMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksWidgetViewMedium.swift; sourceTree = "<group>"; };
+		E13BE02F26683F4800D04408 /* BooksWidgetViewLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksWidgetViewLarge.swift; sourceTree = "<group>"; };
 		E1A22AD6264197CA0055E4A1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unicorn Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_BooksApp.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13BE0322668414400D04408 /* SDWebImageSwiftUI in Frameworks */,
 				E13BE018266814A800D04408 /* SwiftUI.framework in Frameworks */,
 				E13BE016266814A800D04408 /* WidgetKit.framework in Frameworks */,
 			);
@@ -121,7 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				E13BE01A266814A800D04408 /* Unicorn_Books_Widget.swift */,
-				E13BE026266817D900D04408 /* BooksWidgetView.swift */,
+				E13BE026266817D900D04408 /* BooksWidgetViewSmall.swift */,
+				E13BE02D26683F3B00D04408 /* BooksWidgetViewMedium.swift */,
+				E13BE02F26683F4800D04408 /* BooksWidgetViewLarge.swift */,
 				E13BE028266818E100D04408 /* WidgetBookModel.swift */,
 				E13BE01C266814AA00D04408 /* Assets.xcassets */,
 				E13BE01E266814AA00D04408 /* Info.plist */,
@@ -217,6 +225,9 @@
 			dependencies = (
 			);
 			name = "Unicorn Books WidgetExtension";
+			packageProductDependencies = (
+				E13BE0312668414400D04408 /* SDWebImageSwiftUI */,
+			);
 			productName = "Unicorn Books WidgetExtension";
 			productReference = E13BE013266814A800D04408 /* Unicorn Books WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -314,10 +325,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13BE02E26683F3B00D04408 /* BooksWidgetViewMedium.swift in Sources */,
 				E13BE01B266814A800D04408 /* Unicorn_Books_Widget.swift in Sources */,
 				E13BE029266818E100D04408 /* WidgetBookModel.swift in Sources */,
 				E13BE02C26682F5D00D04408 /* ProgressBar.swift in Sources */,
-				E13BE027266817D900D04408 /* BooksWidgetView.swift in Sources */,
+				E13BE027266817D900D04408 /* BooksWidgetViewSmall.swift in Sources */,
+				E13BE03026683F4800D04408 /* BooksWidgetViewLarge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +637,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E13BE0312668414400D04408 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1AD7EFE263D7D7C006797D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		E1AD7EAB263C5569006797D1 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E1AD7EAA263C5569006797D1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
