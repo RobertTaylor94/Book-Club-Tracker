@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E11809EB26403419001633BB /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11809EA26403419001633BB /* BookManager.swift */; };
+		E13BE016266814A800D04408 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13BE015266814A800D04408 /* WidgetKit.framework */; };
+		E13BE018266814A800D04408 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13BE017266814A800D04408 /* SwiftUI.framework */; };
+		E13BE01B266814A800D04408 /* Unicorn_Books_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE01A266814A800D04408 /* Unicorn_Books_Widget.swift */; };
+		E13BE01D266814AA00D04408 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13BE01C266814AA00D04408 /* Assets.xcassets */; };
+		E13BE021266814AA00D04408 /* Unicorn Books WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E13BE013266814A800D04408 /* Unicorn Books WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E13BE027266817D900D04408 /* BooksWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE026266817D900D04408 /* BooksWidgetView.swift */; };
+		E13BE029266818E100D04408 /* WidgetBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE028266818E100D04408 /* WidgetBookModel.swift */; };
+		E13BE02C26682F5D00D04408 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */; };
 		E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22AD6264197CA0055E4A1 /* RealmModel.swift */; };
 		E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */; };
 		E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* HomeView.swift */; };
@@ -25,8 +33,42 @@
 		E1F9D2FC26441F4B00401002 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9D2FB26441F4B00401002 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E13BE01F266814AA00D04408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1AD7E85263C35C4006797D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E13BE012266814A800D04408;
+			remoteInfo = "Unicorn Books WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E13BE022266814AA00D04408 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E13BE021266814AA00D04408 /* Unicorn Books WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E11809EA26403419001633BB /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
+		E13BE013266814A800D04408 /* Unicorn Books WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Unicorn Books WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E13BE015266814A800D04408 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E13BE017266814A800D04408 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E13BE01A266814A800D04408 /* Unicorn_Books_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_Books_Widget.swift; sourceTree = "<group>"; };
+		E13BE01C266814AA00D04408 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E13BE01E266814AA00D04408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E13BE026266817D900D04408 /* BooksWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksWidgetView.swift; sourceTree = "<group>"; };
+		E13BE028266818E100D04408 /* WidgetBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBookModel.swift; sourceTree = "<group>"; };
+		E13BE02A26681A0500D04408 /* Unicorn Books.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Unicorn Books.entitlements"; sourceTree = "<group>"; };
+		E13BE02B26681A1A00D04408 /* Unicorn Books WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Unicorn Books WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		E1A22AD6264197CA0055E4A1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unicorn Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_BooksApp.swift; sourceTree = "<group>"; };
@@ -42,6 +84,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E13BE010266814A800D04408 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E13BE018266814A800D04408 /* SwiftUI.framework in Frameworks */,
+				E13BE016266814A800D04408 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1AD7E8A263C35C4006797D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,11 +108,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E13BE014266814A800D04408 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E13BE015266814A800D04408 /* WidgetKit.framework */,
+				E13BE017266814A800D04408 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E13BE019266814A800D04408 /* Unicorn Books Widget */ = {
+			isa = PBXGroup;
+			children = (
+				E13BE01A266814A800D04408 /* Unicorn_Books_Widget.swift */,
+				E13BE026266817D900D04408 /* BooksWidgetView.swift */,
+				E13BE028266818E100D04408 /* WidgetBookModel.swift */,
+				E13BE01C266814AA00D04408 /* Assets.xcassets */,
+				E13BE01E266814AA00D04408 /* Info.plist */,
+			);
+			path = "Unicorn Books Widget";
+			sourceTree = "<group>";
+		};
 		E1AD7E84263C35C4006797D1 = {
 			isa = PBXGroup;
 			children = (
+				E13BE02B26681A1A00D04408 /* Unicorn Books WidgetExtension.entitlements */,
 				E1B25B7C2641BC13006BF215 /* Images */,
 				E1AD7E8F263C35C4006797D1 /* Unicorn Books */,
+				E13BE019266814A800D04408 /* Unicorn Books Widget */,
+				E13BE014266814A800D04408 /* Frameworks */,
 				E1AD7E8E263C35C4006797D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */,
+				E13BE013266814A800D04408 /* Unicorn Books WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +153,7 @@
 		E1AD7E8F263C35C4006797D1 /* Unicorn Books */ = {
 			isa = PBXGroup;
 			children = (
+				E13BE02A26681A0500D04408 /* Unicorn Books.entitlements */,
 				E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */,
 				E1AD7EA4263C4524006797D1 /* Model */,
 				E1AD7EA1263C3A0D006797D1 /* View */,
@@ -127,6 +204,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E13BE012266814A800D04408 /* Unicorn Books WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E13BE025266814AA00D04408 /* Build configuration list for PBXNativeTarget "Unicorn Books WidgetExtension" */;
+			buildPhases = (
+				E13BE00F266814A800D04408 /* Sources */,
+				E13BE010266814A800D04408 /* Frameworks */,
+				E13BE011266814A800D04408 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unicorn Books WidgetExtension";
+			productName = "Unicorn Books WidgetExtension";
+			productReference = E13BE013266814A800D04408 /* Unicorn Books WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E1AD7E8C263C35C4006797D1 /* Unicorn Books */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1AD7E9C263C35C5006797D1 /* Build configuration list for PBXNativeTarget "Unicorn Books" */;
@@ -134,10 +228,12 @@
 				E1AD7E89263C35C4006797D1 /* Sources */,
 				E1AD7E8A263C35C4006797D1 /* Frameworks */,
 				E1AD7E8B263C35C4006797D1 /* Resources */,
+				E13BE022266814AA00D04408 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E13BE020266814AA00D04408 /* PBXTargetDependency */,
 			);
 			name = "Unicorn Books";
 			packageProductDependencies = (
@@ -160,6 +256,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					E13BE012266814A800D04408 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					E1AD7E8C263C35C4006797D1 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -185,11 +284,20 @@
 			projectRoot = "";
 			targets = (
 				E1AD7E8C263C35C4006797D1 /* Unicorn Books */,
+				E13BE012266814A800D04408 /* Unicorn Books WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E13BE011266814A800D04408 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E13BE01D266814AA00D04408 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1AD7E8B263C35C4006797D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +310,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E13BE00F266814A800D04408 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E13BE01B266814A800D04408 /* Unicorn_Books_Widget.swift in Sources */,
+				E13BE029266818E100D04408 /* WidgetBookModel.swift in Sources */,
+				E13BE02C26682F5D00D04408 /* ProgressBar.swift in Sources */,
+				E13BE027266817D900D04408 /* BooksWidgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1AD7E89263C35C4006797D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,7 +339,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E13BE020266814AA00D04408 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E13BE012266814A800D04408 /* Unicorn Books WidgetExtension */;
+			targetProxy = E13BE01F266814AA00D04408 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E13BE023266814AA00D04408 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Unicorn Books WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LBCRF4Q4ZD;
+				INFOPLIST_FILE = "Unicorn Books Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberttaylor.Unicorn-Books.Unicorn-Books-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E13BE024266814AA00D04408 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Unicorn Books WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LBCRF4Q4ZD;
+				INFOPLIST_FILE = "Unicorn Books Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberttaylor.Unicorn-Books.Unicorn-Books-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E1AD7E9A263C35C5006797D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,8 +511,10 @@
 		E1AD7E9D263C35C5006797D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Unicorn Books/Unicorn Books.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Unicorn Books/Preview Content\"";
 				DEVELOPMENT_TEAM = LBCRF4Q4ZD;
@@ -362,8 +535,10 @@
 		E1AD7E9E263C35C5006797D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Unicorn Books/Unicorn Books.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Unicorn Books/Preview Content\"";
 				DEVELOPMENT_TEAM = LBCRF4Q4ZD;
@@ -384,6 +559,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E13BE025266814AA00D04408 /* Build configuration list for PBXNativeTarget "Unicorn Books WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E13BE023266814AA00D04408 /* Debug */,
+				E13BE024266814AA00D04408 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E1AD7E88263C35C4006797D1 /* Build configuration list for PBXProject "Unicorn Books" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
