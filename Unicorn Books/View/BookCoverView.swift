@@ -56,7 +56,7 @@ struct BookCoverView: View {
             }
             
             VStack(alignment: .center) {
-                ProgressBar(progress: self.$progressValue)
+                ProgressBar(progress: self.progressValue)
                     .frame(minWidth: 50, idealWidth: 80, maxWidth: 100, minHeight: 50, idealHeight: 80, maxHeight: 100)
                     .padding()
                 Stepper("", value: $progressValue, in: 0...1, step: 0.1)

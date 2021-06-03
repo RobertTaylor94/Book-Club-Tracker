@@ -25,6 +25,7 @@ struct BooksWidgetViewSmall: View {
                     .foregroundColor(.white)
                     .font(.title2)
                     .bold()
+                    .minimumScaleFactor(0.6)
                 Spacer()
                 Text("\(String(format: "%.0f", progress*100))%")
                     .foregroundColor(.white)

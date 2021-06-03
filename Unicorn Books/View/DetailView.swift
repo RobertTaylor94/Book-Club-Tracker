@@ -34,7 +34,7 @@ struct DetailView: View {
             .padding()
             .background(Color("TextBackground"))
             .cornerRadius(10)
-            ProgressBar(progress: $progressValue).frame(width: 100, height: 100)
+            ProgressBar(progress: progressValue).frame(width: 100, height: 100)
             Spacer()
         }
         .padding()

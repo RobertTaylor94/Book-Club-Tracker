@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import SDWebImageSwiftUI
+
 
 struct BooksWidgetViewMedium: View {
     
@@ -34,7 +34,13 @@ struct BooksWidgetViewMedium: View {
                     Spacer()
                 }.padding()
                 
-                WebImage(url: URL(string: bookImgUrl)).resizable().frame(width: 20, height: 20).aspectRatio(contentMode: .fit)
+                Link(destination: URL(string: "widget-deeplink://addbook")!, label: {
+                    Text("Add Book")
+                        .frame(width: 100, height: 70)
+                        .background(Color("DetailViewColorTwo"))
+                        .cornerRadius(20)
+                })
+                
             }
             
         }

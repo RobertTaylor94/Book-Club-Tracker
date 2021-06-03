@@ -83,6 +83,7 @@ struct HomeView: View {
         let book = books?.last
         UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.set(book?.title, forKey: "title")
         UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.set(book?.progressValue, forKey: "progress")
+        UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.set(book?.imgurl, forKey: "imgUrl")
         WidgetCenter.shared.reloadAllTimelines()
     }
     

@@ -8,13 +8,14 @@
 import WidgetKit
 import SwiftUI
 
+
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), book: WidgetBook(title: "Add Your First Book!", progress: 0.0))
+        SimpleEntry(date: Date(), book: WidgetBook(title: "Add Your First Book!", progress: 0.0, bookImgUrl: ""))
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), book: WidgetBook(title: "Add Your First Book!", progress: 0.0))
+        let entry = SimpleEntry(date: Date(), book: WidgetBook(title: "Add Your First Book!", progress: 0.0, bookImgUrl: ""))
         completion(entry)
     }
 
@@ -28,7 +29,8 @@ struct Provider: TimelineProvider {
             let entry = SimpleEntry(date: entryDate,
                                     book: WidgetBook(
                                         title: "\(UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.object(forKey: "title") as! String)",
-                                        progress: UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.object(forKey: "progress") as! Float))
+                                        progress: UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.object(forKey: "progress") as! Float,
+                                        bookImgUrl: UserDefaults(suiteName: "group.com.roberttaylor.Unicorn-Books")!.object(forKey: "imgUrl") as! String))
             
             entries.append(entry)
         }
@@ -45,28 +47,26 @@ struct SimpleEntry: TimelineEntry {
 
 struct Unicorn_Books_WidgetEntryView : View {
     var entry: Provider.Entry
-
+    
+    @Environment(\.widgetFamily) var family: WidgetFamily
+    
+    @ViewBuilder
     var body: some View {
-        
-        ZStack {
-            
-            LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
-            
-            VStack {
-                Spacer()
-                Text(entry.book.title)
-                    .foregroundColor(.white)
-                    .font(.title2)
-                    .bold()
-                Spacer()
-                Text("\(String(format: "%.0f", entry.book.progress*100))%")
-                    .foregroundColor(.white)
-                Spacer()
-            }.padding()
-            
+        switch family {
+        case .systemSmall:
+            BooksWidgetViewSmall(title: entry.book.title, progress: entry.book.progress)
+        case .systemMedium:
+            BooksWidgetViewMedium(title: entry.book.title, progress: entry.book.progress, bookImgUrl: entry.book.bookImgUrl)
+        case .systemLarge:
+            BooksWidgetViewLarge(title: entry.book.title, progress: entry.book.progress)
+        @unknown default:
+            EmptyView()
         }
     }
+    
+    
 }
+
 
 @main
 struct Unicorn_Books_Widget: Widget {
@@ -78,12 +78,17 @@ struct Unicorn_Books_Widget: Widget {
         }
         .configurationDisplayName("Book Club Widget")
         .description("Shows your current book and its progress.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct Unicorn_Books_Widget_Previews: PreviewProvider {
     static var previews: some View {
-        Unicorn_Books_WidgetEntryView(entry: SimpleEntry(date: Date(), book: WidgetBook(title: "Title", progress: 0.1)))
+        Unicorn_Books_WidgetEntryView(entry: SimpleEntry(date: Date(), book: WidgetBook(title: "Title", progress: 0.1, bookImgUrl: "")))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Unicorn_Books_WidgetEntryView(entry: SimpleEntry(date: Date(), book: WidgetBook(title: "Title", progress: 0.1, bookImgUrl: "")))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        Unicorn_Books_WidgetEntryView(entry: SimpleEntry(date: Date(), book: WidgetBook(title: "Title", progress: 0.1, bookImgUrl: "")))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

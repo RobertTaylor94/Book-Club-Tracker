@@ -10,4 +10,5 @@ import Foundation
 struct WidgetBook  {
     let title: String
     let progress: Float
+    let bookImgUrl: String
 }
