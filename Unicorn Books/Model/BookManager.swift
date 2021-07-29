@@ -47,9 +47,10 @@ public class BookFetcher: ObservableObject {
                 }
                 let description = i["volumeInfo"]["description"].stringValue
                 let imurl = i["volumeInfo"]["imageLinks"]["thumbnail"].stringValue
+                let pageCount = i["volumeInfo"]["pageCount"].intValue
                 
                 DispatchQueue.main.async {
-                    self.books.append(Book(id: id, title: title, authors: author, desc: description, imgurl: imurl))
+                    self.books.append(Book(id: id, title: title, authors: author, desc: description, imgurl: imurl, pageCount: pageCount))
                 }
             
             }
@@ -70,4 +71,5 @@ struct Book: Identifiable {
     var authors: String
     var desc: String
     var imgurl: String
+    var pageCount: Int
 }

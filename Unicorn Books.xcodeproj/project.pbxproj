@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E11809EB26403419001633BB /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11809EA26403419001633BB /* BookManager.swift */; };
+		E181450126B1596300999A44 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181450026B1596300999A44 /* StatsView.swift */; };
+		E181450326B170A300999A44 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181450226B170A300999A44 /* StatsViewModel.swift */; };
 		E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22AD6264197CA0055E4A1 /* RealmModel.swift */; };
 		E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */; };
 		E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* HomeView.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		E11809EA26403419001633BB /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
+		E181450026B1596300999A44 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		E181450226B170A300999A44 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		E1A22AD6264197CA0055E4A1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unicorn Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_BooksApp.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				E1AD7EA8263C5476006797D1 /* BookCoverView.swift */,
 				E1AD7E9F263C3A04006797D1 /* DetailView.swift */,
 				E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */,
+				E181450026B1596300999A44 /* StatsView.swift */,
+				E181450226B170A300999A44 /* StatsViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,7 +217,9 @@
 				E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */,
 				E11809EB26403419001633BB /* BookManager.swift in Sources */,
 				E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */,
+				E181450326B170A300999A44 /* StatsViewModel.swift in Sources */,
 				E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */,
+				E181450126B1596300999A44 /* StatsView.swift in Sources */,
 				E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */,
 				E1F9D2FC26441F4B00401002 /* MainView.swift in Sources */,
 				E1AD7EB6263C63F5006797D1 /* AddBookView.swift in Sources */,
@@ -343,6 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Unicorn Books/Preview Content\"";
 				DEVELOPMENT_TEAM = LBCRF4Q4ZD;
 				ENABLE_PREVIEWS = YES;
@@ -365,6 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Unicorn Books/Preview Content\"";
 				DEVELOPMENT_TEAM = LBCRF4Q4ZD;
 				ENABLE_PREVIEWS = YES;

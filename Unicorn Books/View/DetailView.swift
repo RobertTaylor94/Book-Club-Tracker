@@ -17,6 +17,7 @@ struct DetailView: View {
     @State var bookAuthor: String = ""
     @State var bookDescription: String = ""
     @State var bookImgUrl: String = ""
+    @State var pageCount: Int = 0
     @Environment(\.presentationMode) var presentationMode
     @State private var books: Results<DBBook>?
     let realm = try! Realm()
@@ -28,6 +29,7 @@ struct DetailView: View {
             Text(bookTitle).font(.title2)
             Text(bookAuthor).font(.caption)
             WebImage(url: URL(string: bookImgUrl)).resizable().frame(minWidth: 100, idealWidth: 200, maxWidth: 200, minHeight: 200, idealHeight: 300, maxHeight: 300).aspectRatio(contentMode: .fit).cornerRadius(10)
+            Text("\(pageCount) pages").font(.caption)
             ScrollView {
                 Text(bookDescription).font(.body)
             }

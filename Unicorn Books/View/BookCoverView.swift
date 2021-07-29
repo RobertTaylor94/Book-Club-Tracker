@@ -19,8 +19,11 @@ struct BookCoverView: View {
     @State var bookAuthor: String = ""
     @State var bookDescription: String = ""
     @State var bookImgUrl: String = ""
+    @State var pageCount: Int = 0
+    @State var currentPage: Int = 0
     @State var book: DBBook
     @State private var isShowingSheet = false
+    @State private var addProgressSheetShowing = false
     
     
     var body: some View {
@@ -52,14 +55,28 @@ struct BookCoverView: View {
                 .cornerRadius(20)
             })
             .sheet(isPresented: $isShowingSheet) {
-                DetailView(progressValue: progressValue, bookID: bookID, bookTitle: bookTitle, bookAuthor: bookAuthor, bookDescription: bookDescription, bookImgUrl: bookImgUrl)
+                DetailView(progressValue: progressValue, bookID: bookID, bookTitle: bookTitle, bookAuthor: bookAuthor, bookDescription: bookDescription, bookImgUrl: bookImgUrl, pageCount: pageCount)
             }
             
             VStack(alignment: .center) {
-                ProgressBar(progress: self.$progressValue)
-                    .frame(minWidth: 50, idealWidth: 80, maxWidth: 100, minHeight: 50, idealHeight: 80, maxHeight: 100)
-                    .padding()
-                Stepper("", value: $progressValue, in: 0...1, step: 0.1)
+                Button(action: {
+                    
+                    //custom alert with textfield to add current page number
+                    
+                    //change progress value to (currentPage/totalPages * 100)
+//                    let progress = (currentPage/pageCount) * 100
+//                    let roundedProgress = round(Double(progress * 100)) / 100.0
+//                    progressValue = Float(roundedProgress)
+//                    saveBook(book: book)
+                    
+                    addProgressSheetShowing.toggle()
+                    
+                }, label: {
+                    ProgressBar(progress: self.$progressValue)
+                        .frame(minWidth: 50, idealWidth: 80, maxWidth: 100, minHeight: 50, idealHeight: 80, maxHeight: 100)
+                        .padding()
+                })
+                Stepper("", value: $progressValue, in: 0...1, step: 0.05)
                     .onChange(of: progressValue, perform: { value in
                         saveBook(book: book)
                     })

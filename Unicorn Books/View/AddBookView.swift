@@ -57,7 +57,7 @@ struct AddBookView: View {
                                     newBook.authors = i.authors
                                     newBook.desc = i.desc
                                     newBook.imgurl = i.imgurl
-                                    
+                                    newBook.pageCount = i.pageCount
                                     self.saveBook(book: newBook)
                                 showAlert.toggle()
                                     

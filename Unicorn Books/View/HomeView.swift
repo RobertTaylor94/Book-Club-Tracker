@@ -10,7 +10,6 @@ import RealmSwift
 
 struct HomeView: View {
     
-    //    @AppStorage("onBoardingShowing") var isOnboardingShowing = true
     @State private var books: Results<DBBook>?
     let realm = try! Realm()
     
@@ -26,7 +25,7 @@ struct HomeView: View {
                         HStack {
                             ForEach(books!.reversed()) { i in
                                 ZStack {
-                                    BookCoverView(progressValue: i.progressValue, bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl, book: i)
+                                    BookCoverView(progressValue: i.progressValue, bookID: i.id, bookTitle: i.title, bookAuthor: i.authors, bookDescription: i.desc, bookImgUrl: i.imgurl, pageCount: i.pageCount, book: i)
                                     VStack(alignment: .trailing, spacing: 20) {
                                         HStack {
                                             Spacer()
@@ -57,7 +56,7 @@ struct HomeView: View {
                 }
                 Spacer()
                     
-                    .navigationTitle("Book Club")
+                    .navigationTitle("Unicorn Books")
             }
             
         }
