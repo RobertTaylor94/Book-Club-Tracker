@@ -17,4 +17,5 @@ class DBBook: Object, Identifiable {
     @objc dynamic var progressValue: Float = 0.0
     @objc dynamic var pageCount: Int = 0
     @objc dynamic var currentPage: Int = 0
+    @objc dynamic var timeToRead: String = ""
 }
