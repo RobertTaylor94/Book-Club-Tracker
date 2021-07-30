@@ -24,66 +24,67 @@ struct BookCoverView: View {
     @State var book: DBBook
     @State private var isShowingSheet = false
     @State private var addProgressSheetShowing = false
+    @State private var text: String = ""
     
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 15) {
-            
-            Button(action: {
-                isShowingSheet.toggle()
-            }, label: {
-                VStack(alignment: .leading, spacing: 16.0) {
-                    if bookImgUrl != "" {
-                        WebImage(url: URL(string: bookImgUrl)).resizable().frame(minWidth: 90, idealWidth: 120, maxWidth: .infinity, minHeight: 140, idealHeight: 170, maxHeight: 170).aspectRatio(contentMode: .fit).cornerRadius(10)
-                    } else {
-                        Image(systemName: "books.vertical").resizable().frame(minWidth: 90, idealWidth: 120, maxWidth: .infinity, minHeight: 140, idealHeight: 170, maxHeight: 170).cornerRadius(10)
-                    }
-                    Text("\(bookTitle)")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("\(bookAuthor)")
-                        .font(.caption)
-                    Text("\(bookDescription)")
-                        .fontWeight(.light)
-                        .lineLimit(4)
-                }
-                .frame(minWidth: 100, idealWidth: 200, maxWidth: 200, minHeight: 175, idealHeight: 350, maxHeight: 350)
-                .foregroundColor(.white)
-                .padding()
-                .background(LinearGradient(gradient: Gradient(colors: [Color("BookTileColorOne"), Color("BookTileColorTwo")]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                .cornerRadius(20)
-            })
-            .sheet(isPresented: $isShowingSheet) {
-                DetailView(progressValue: progressValue, bookID: bookID, bookTitle: bookTitle, bookAuthor: bookAuthor, bookDescription: bookDescription, bookImgUrl: bookImgUrl, pageCount: pageCount)
-            }
-            
-            VStack(alignment: .center) {
+        ZStack {
+            VStack(alignment: .center, spacing: 15) {
                 Button(action: {
-                    
-                    //custom alert with textfield to add current page number
-                    
-                    //change progress value to (currentPage/totalPages * 100)
-//                    let progress = (currentPage/pageCount) * 100
-//                    let roundedProgress = round(Double(progress * 100)) / 100.0
-//                    progressValue = Float(roundedProgress)
-//                    saveBook(book: book)
-                    
-                    addProgressSheetShowing.toggle()
-                    
+                    isShowingSheet.toggle()
                 }, label: {
+                    VStack(alignment: .leading, spacing: 16.0) {
+                        if bookImgUrl != "" {
+                            WebImage(url: URL(string: bookImgUrl)).resizable().frame(minWidth: 90, idealWidth: 120, maxWidth: .infinity, minHeight: 140, idealHeight: 170, maxHeight: 170).aspectRatio(contentMode: .fit).cornerRadius(10)
+                        } else {
+                            Image(systemName: "books.vertical").resizable().frame(minWidth: 90, idealWidth: 120, maxWidth: .infinity, minHeight: 140, idealHeight: 170, maxHeight: 170).cornerRadius(10)
+                        }
+                        Text("\(bookTitle)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Text("\(bookAuthor)")
+                            .font(.caption)
+                        Text("\(bookDescription)")
+                            .fontWeight(.light)
+                            .lineLimit(4)
+                    }
+                    .frame(minWidth: 100, idealWidth: 200, maxWidth: 200, minHeight: 175, idealHeight: 350, maxHeight: 350)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("BookTileColorOne"), Color("BookTileColorTwo")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .cornerRadius(20)
+                })
+                .sheet(isPresented: $isShowingSheet) {
+                    DetailView(progressValue: progressValue, bookID: bookID, bookTitle: bookTitle, bookAuthor: bookAuthor, bookDescription: bookDescription, bookImgUrl: bookImgUrl, pageCount: pageCount)
+                }
+                VStack(alignment: .center) {
                     ProgressBar(progress: self.$progressValue)
                         .frame(minWidth: 50, idealWidth: 80, maxWidth: 100, minHeight: 50, idealHeight: 80, maxHeight: 100)
                         .padding()
-                })
-                Stepper("", value: $progressValue, in: 0...1, step: 0.05)
-                    .onChange(of: progressValue, perform: { value in
-                        saveBook(book: book)
+                    Button(action: {
+                        self.addProgressSheetShowing = true
+                    }, label: {
+                        Text("Update Progress")
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .lineLimit(1)
+                            .padding(10)
+                            .background(Color("BookTileColorTwo"))
+                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     })
-            }.frame(minWidth: 70, idealWidth: 100, maxWidth: 120)
+                    Stepper("", value: $progressValue, in: 0...1, step: 0.05)
+                        .onChange(of: progressValue, perform: { value in
+                            saveBook(book: book)
+                        })
+                }.frame(minWidth: 70, idealWidth: 100, maxWidth: 120)
+            }
             
-            
-            
+            TFAlert(isShown: $addProgressSheetShowing, text: $text, totalPages: $pageCount, currentPage: $currentPage, progressValue: $progressValue)
+                .onChange(of: addProgressSheetShowing, perform: { value in
+                saveBook(book: book)
+            })
+            //end of ZStack
         }
     }
     
