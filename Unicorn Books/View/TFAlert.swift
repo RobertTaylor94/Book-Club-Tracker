@@ -30,7 +30,6 @@ struct TFAlert: View {
             HStack(spacing: 30) {
                 
                 Button("Done") {
-                    print(text)
                     progressValue = updateProgress(text: Int(text)!)
                     isShown = false
                 }
@@ -68,7 +67,6 @@ struct TFAlert: View {
         let cpage: Float = Float(currentPage)
         let newProgress = Float(cpage/tpage)
         let roundedProgress = round(Double(newProgress * 100)) / 100.0
-        print(newProgress)
         return Float(roundedProgress)
     }
 }

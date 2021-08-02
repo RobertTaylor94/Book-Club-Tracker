@@ -60,7 +60,7 @@ struct BookCoverView: View {
                 }
                 VStack(alignment: .center) {
                     ProgressBar(progress: self.$progressValue)
-                        .frame(minWidth: 50, idealWidth: 80, maxWidth: 100, minHeight: 50, idealHeight: 80, maxHeight: 100)
+                        .frame(minWidth: 30, idealWidth: 80, maxWidth: 100, minHeight: 30, idealHeight: 80, maxHeight: 100)
                         .padding()
                     Button(action: {
                         self.addProgressSheetShowing = true
@@ -77,6 +77,7 @@ struct BookCoverView: View {
                         .onChange(of: progressValue, perform: { value in
                             saveBook(book: book)
                         })
+                        .offset(x: -13.0)
                 }.frame(minWidth: 70, idealWidth: 100, maxWidth: 120)
             }
             

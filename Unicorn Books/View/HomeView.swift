@@ -55,7 +55,6 @@ struct HomeView: View {
                         }
                 }
                 Spacer()
-                    
                     .navigationTitle("Unicorn Books")
             }
             
