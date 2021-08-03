@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E11809EB26403419001633BB /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11809EA26403419001633BB /* BookManager.swift */; };
+		E16AC0E326B9E2C4009AEE32 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AC0E226B9E2C4009AEE32 /* TimerViewModel.swift */; };
+		E16AC0E526B9ED38009AEE32 /* TimerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AC0E426B9ED38009AEE32 /* TimerBarView.swift */; };
 		E181450126B1596300999A44 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181450026B1596300999A44 /* StatsView.swift */; };
-		E181450326B170A300999A44 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E181450226B170A300999A44 /* StatsViewModel.swift */; };
 		E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A22AD6264197CA0055E4A1 /* RealmModel.swift */; };
 		E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */; };
 		E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7E92263C35C4006797D1 /* HomeView.swift */; };
@@ -32,8 +33,9 @@
 
 /* Begin PBXFileReference section */
 		E11809EA26403419001633BB /* BookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
+		E16AC0E226B9E2C4009AEE32 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		E16AC0E426B9ED38009AEE32 /* TimerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBarView.swift; sourceTree = "<group>"; };
 		E181450026B1596300999A44 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
-		E181450226B170A300999A44 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		E1A22AD6264197CA0055E4A1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		E1AD7E8D263C35C4006797D1 /* Unicorn Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unicorn Books.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AD7E90263C35C4006797D1 /* Unicorn_BooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unicorn_BooksApp.swift; sourceTree = "<group>"; };
@@ -115,9 +117,10 @@
 				E1AD7E9F263C3A04006797D1 /* DetailView.swift */,
 				E1AD7EA6263C52BC006797D1 /* ProgressBar.swift */,
 				E181450026B1596300999A44 /* StatsView.swift */,
-				E181450226B170A300999A44 /* StatsViewModel.swift */,
 				E1B887B826B430EB0015BCD2 /* BookStatsView.swift */,
 				E1B887B626B42AD30015BCD2 /* TimerView.swift */,
+				E16AC0E226B9E2C4009AEE32 /* TimerViewModel.swift */,
+				E16AC0E426B9ED38009AEE32 /* TimerBarView.swift */,
 				E1B887B426B41A330015BCD2 /* TFAlert.swift */,
 			);
 			path = View;
@@ -221,14 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16AC0E326B9E2C4009AEE32 /* TimerViewModel.swift in Sources */,
 				E1AD7E93263C35C4006797D1 /* HomeView.swift in Sources */,
 				E1AD7EA0263C3A04006797D1 /* DetailView.swift in Sources */,
 				E1AD7EA9263C5476006797D1 /* BookCoverView.swift in Sources */,
 				E1B887B926B430EC0015BCD2 /* BookStatsView.swift in Sources */,
 				E11809EB26403419001633BB /* BookManager.swift in Sources */,
 				E1AD7E91263C35C4006797D1 /* Unicorn_BooksApp.swift in Sources */,
+				E16AC0E526B9ED38009AEE32 /* TimerBarView.swift in Sources */,
 				E1B887B726B42AD30015BCD2 /* TimerView.swift in Sources */,
-				E181450326B170A300999A44 /* StatsViewModel.swift in Sources */,
 				E1A22AD7264197CA0055E4A1 /* RealmModel.swift in Sources */,
 				E181450126B1596300999A44 /* StatsView.swift in Sources */,
 				E1AD7EA7263C52BC006797D1 /* ProgressBar.swift in Sources */,
