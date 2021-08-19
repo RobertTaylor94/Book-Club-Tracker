@@ -6,14 +6,10 @@
 //
 
 import SwiftUI
-import RealmSwift
 
 struct StatsView: View {
     
-    //Variables
-    @State private var isShowing: Bool = false
-    @State private var books: Results<DBBook>?
-    let realm = try! Realm()
+    @ObservedObject var viewModel = StatsViewModel()
 
     var body: some View {
         
@@ -33,10 +29,10 @@ struct StatsView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     })
                 //Previous book time length to read
-                if books != nil {
+                if viewModel.books != nil {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(books!.reversed()) { i in
+                            ForEach(viewModel.books!.reversed()) { i in
                                 BookStatsView(
                                     bookImgUrl: i.imgurl,
                                     bookTitle: i.title,
@@ -49,22 +45,19 @@ struct StatsView: View {
                     }
                     .padding()
                     .onAppear(){
-                        updateBooks()
+                        viewModel.updateBooks()
                     }
                 } else {
                     Text("No stats available")
                         .onAppear(){
-                            updateBooks()
+                            viewModel.updateBooks()
                         }
                 }
             }//VstackEnd
             .navigationTitle("Stats")
         }//NavStackEnd
     }
-    
-    func updateBooks() {
-        books = realm.objects(DBBook.self)
-    }
+
 }
 
 struct StatsView_Previews: PreviewProvider {

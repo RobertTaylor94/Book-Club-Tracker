@@ -27,14 +27,12 @@ struct ProgressBar: View {
                 .fontWeight(.bold)
                 .font(.title2)
         }
-        
-        
     }
 }
 
-//
-//struct ProgressBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProgressBar(progress: Float = 1.0)
-//    }
-//}
+
+struct ProgressBar_Previews: PreviewProvider {
+    static var previews: some View {
+        ProgressBar(progress: .constant(1.0))
+    }
+}

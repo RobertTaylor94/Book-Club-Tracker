@@ -16,7 +16,7 @@ class TimerViewModel: ObservableObject {
     @State var timer: Timer?
     @Published var progress: Float = 1.0
     @Published var showButton = true
-    
+    var minutes = Array(0...120)
     
     func startButtonPressed() {
         showButton.toggle()
@@ -36,7 +36,6 @@ class TimerViewModel: ObservableObject {
         }
     }
     
-    
     func resetButtonPressed() {
         selectedSeconds = 0
         selectedMinutes = 0
@@ -53,6 +52,5 @@ class TimerViewModel: ObservableObject {
         let totalSecs = selectedSeconds
         return totalSecs
     }
-    
     
 }

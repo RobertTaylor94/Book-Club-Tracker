@@ -42,9 +42,6 @@ struct DetailView: View {
         .padding()
         .background(LinearGradient(gradient: Gradient(colors: [Color("DetailViewColorOne"), Color("DetailViewColorTwo")]), startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea())
         
-        
-        
-        
     }
     
     func removeBook() {

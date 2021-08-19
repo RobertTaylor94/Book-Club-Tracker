@@ -10,10 +10,6 @@ import RealmSwift
 
 struct TimerView: View {
     
-    var hours = Array(0...23)
-    var minutes = Array(0...120)
-    @State private var selectedHours = 0
-    
     @ObservedObject var viewModel = TimerViewModel()
     
     var body: some View {
@@ -27,8 +23,8 @@ struct TimerView: View {
                 TimerBarView(progress: $viewModel.progress)
                     .frame(width: 200, height: 200, alignment: .center)
                 Spacer()
+                //Timer numbers display
                 HStack{
-                    
                     Text("\(viewModel.calculate()/3600,specifier: "%02d") :")
                         .font(.largeTitle)
                     
@@ -38,7 +34,6 @@ struct TimerView: View {
                     Text("\(viewModel.calculate() % 60,specifier: "%02d")")
                         .font(.largeTitle)
                 }
-
                 Spacer()
                 HStack(spacing: 75) {
                     
@@ -68,8 +63,8 @@ struct TimerView: View {
                 }
                 
                 Picker("", selection: $viewModel.selectedMinutes) {
-                    ForEach(0..<self.minutes.count) {
-                        Text("\(self.minutes[$0]) minutes")
+                    ForEach(0..<viewModel.minutes.count) {
+                        Text("\(viewModel.minutes[$0]) minutes")
                     }
                 }
                 .opacity(viewModel.showButton ? 1 : 0)

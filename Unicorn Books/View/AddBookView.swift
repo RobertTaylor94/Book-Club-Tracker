@@ -29,7 +29,10 @@ struct AddBookView: View {
                         self.showCancelButton = true
                     }, onCommit: {
                         self.fetcher.getJsonData(string: searchText)
-                    }).foregroundColor(.primary).keyboardType(.webSearch)
+                    })
+                    .foregroundColor(.primary)
+                    .keyboardType(.webSearch)
+                    .accessibilityIdentifier("Search Text Field")
                     
                     Button(action: {
                         self.searchText = ""
